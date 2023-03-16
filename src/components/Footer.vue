@@ -2,7 +2,7 @@
   <div id="footer">
     <ul class="footer-button-plus">
       <input type="file" id="file" class="inputfile" />
-      <label for="file" class="input-plus">+</label>
+      <label for="file" class="input-plus" ><font-awesome-icon :icon="['far','square-plus']" /></label>
     </ul>
   </div>
 </template>

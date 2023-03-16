@@ -1,15 +1,14 @@
 <script setup>
 import Header from './components/Header.vue';
 import Container from './components/Container.vue';
+import PostInfo  from "./assets/post.js";
 import Footer from './components/Footer.vue';
-import Post  from "./assets/post.js";
-import axios from 'axios';
 </script>
 
 <template>
   <div id="wrap">
     <Header />
-    <Container :Data="Data" ref="more"/>
+    <Container :Data="Data" :ascNum="ascNum" />
     <Footer />
   </div>
 </template>
@@ -17,23 +16,15 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      Data: Post,
+      Data: PostInfo,
       ascNum: 0,
     }
-  },
-  methods: {
-    more() {
-      axios.get(`https://codingapple1.github.io/vue/more${ascNum}.json`)
-        .then((result) => {
-          console.log(result);
-        })
-    },
   },
   components: {
     Header,
     Container,
     Footer,
-  },
+},
 }
 </script>
 <style>
